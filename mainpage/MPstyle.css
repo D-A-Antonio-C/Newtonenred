@@ -1,0 +1,1029 @@
+body{
+    font-style: normal;
+    font-family: "Alatsi" !important;
+    margin: 0;
+    width: 100%;
+}
+.indeximage{
+    background-image: url("../recursosvisuales/banner/fondoinicio2.jpg");
+    width: 100%;
+    height: auto;
+}
+.maincontent{
+    position: relative; /* Permite que el contenido esté sobre las partículas */
+    z-index: 1; /* Asegura que el contenido esté por encima de las partículas */
+    color: white;
+    text-align: center;
+}
+
+.background {
+    position: relative; 
+    z-index: 1; 
+    color: white;
+    text-align: center;
+    padding: 100px 20px;
+    font-size: 24px;
+}
+
+#particles-js {
+    position: fixed;  
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;  /* Asegura que el contenedor de partículas cubra toda la altura */
+    z-index: -1;   /* Asegura que las partículas estén detrás del contenido */
+}
+
+/*barra de navegacion*/
+
+.navContainer{
+    height: 100px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+.navImage img{
+    height: 80px;
+}
+
+.navUtilities{
+    display: flex;
+    margin-right: 20px;
+}
+
+.navUtilities a {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.navUtilities a img{
+    height: 30px;
+    width: auto;
+    margin: 5px;
+}
+
+.navContainer a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;;
+}
+
+/* Estilos para el botón hamburguesa */
+.menu-icon {
+    display: none;
+    background-color: #00BFFF;
+    border: none;
+    padding: 10px;
+    cursor: pointer;
+    position: absolute;
+    right: 20px;
+    top: 10px;
+    border-radius: 10px;
+  }
+
+  .menu-icon div {
+    width: 30px;
+    height: 3px;
+    background-color: white;
+    margin: 6px 0;
+  }
+
+  .navUtilities.show-links {
+    display: flex;
+  }
+
+/*banner*/
+
+.bannerContainer{
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+.bannerContainer p{
+    font-size: 36px;
+    text-align: center;
+    margin: 0 !important;
+    padding: 0;
+    color: white;
+}
+
+/*redes*/
+
+.redesContainer{
+    background-color: #0196FF;
+    width: 100%;
+    display: flex;
+    font-size: 28px;
+    color: white;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+}
+
+.redesContainer img{
+    height: 48px;
+    margin: 15px;
+}
+
+/* settings generales container*/
+
+.Support{/*letrero margenes*/
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    flex-wrap: wrap;
+}
+
+.alone{/* letrero celeste solo*/
+    padding: 38px 0px;
+}
+
+.group{/* letrero celeste con texto*/
+    padding-top: 38px;
+    position: absolute;
+    top: 15px;
+    z-index: 2;
+}
+
+.header{/*letrero settings*/
+    display: flex;
+    color: white;
+    width: 50%;
+    height: 90px;
+    font-size: 28px;
+    border-radius: 40px;
+    align-items: center;
+    background-color: #00BFFF;
+    justify-content: space-around;
+}
+
+.header img{/*margenes trofeo*/
+    height: 48px;
+}
+
+.containerCentrado{/*centrador de contenedor de texto*/
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    height: 320px;
+}
+
+.bodytext{/*contenedor de texto*/
+    position: absolute;
+    width: 60%;
+    top: 100px;
+    z-index: 1;
+    border: 8px solid transparent;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #0682DA;
+    display: flex;
+    text-align: center;
+    align-items: center;
+    justify-content: center;
+    padding-top: 1.5%;
+    background-color: white;
+}
+
+.bodytext p{/*texto*/
+    font-size: 20px;
+    width: 90%;
+    color: #005C8A;
+}
+
+.relative{/*posicion relativa*/
+    position: relative;
+}
+
+
+/*contenedores especificos*/
+
+/*contenedor de video*/
+
+.videoBody{
+    display:flex;
+    justify-content: space-between;
+    width: 100%;
+    height: 522px;
+}
+.videoBody img{
+    height: 110px;
+    width: 110px;
+    position: relative;
+    z-index: 2;
+    bottom: 10%;
+}
+.videoBodyright{
+    margin: 0;
+    width: 40%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+}
+
+.videoText{
+    display: flex;
+    width: 27%;
+    height: 8.29%;
+    text-align: center;
+    border: 12px solid; /* Establece el ancho del borde */
+    color: #0196FF;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px;
+    position: absolute;
+    margin: 0 5%;
+    z-index: 1;
+}
+
+.videoText p{
+    width: 85%;
+    height: auto;
+    padding-top: 40px;
+    padding-bottom: 10px;
+    font-size: 21px;
+    color: #024076;
+    margin: 0;
+}
+
+.videoContainer{
+    background-color: black;
+    border: 12px solid;
+    color: #0196FF;
+    width: 67%;
+    height: 95%;
+    border-radius: 10px;
+    margin-right: 5%;
+    padding: 0;
+}
+
+.videoContainer video{
+    height: 100%;
+    width: 100%;
+}
+
+/*contenedor de servicios*/
+
+.servicesElementContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+    margin-bottom:45px;
+    justify-items: center;
+}
+
+.servicesElement{
+    color:#024076 !important;
+    width:370px;
+}
+
+.SE1{
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.SE2{
+    grid-column: 2;
+    grid-row: 1;
+}
+
+.SE3{
+    grid-column: 3;
+    grid-row: 1;
+}
+
+.SE4{
+    grid-column: 1;
+    grid-row: 2;
+}
+
+.SE5{
+    grid-column: 2;
+    grid-row: 2;
+}
+
+.SE6{
+    grid-column: 3;
+    grid-row: 2;
+}
+
+.servicesElement img{
+    width: 95px;
+    height: auto;
+}
+
+.servicesElement h3{
+    font-size: 24px;
+    margin: 5px;
+}
+.servicesElement p{
+    margin: 0;
+    font-size: 20px;
+}
+
+/*contenedor de contactos*/
+
+.contactsContainer{
+    height: 370px;
+    width: 100%;
+    display: flex;
+    margin: 0%;
+    margin-bottom: 20px;
+}
+
+.contactsContainer img{
+    height: 43%;
+    padding: 13.5% 20.4%;
+}
+
+.contactsContainer img:hover{
+    transform: scale(1.2);
+    padding: 9.9% 12%;
+}
+
+.contacts{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    background-color: #0196FF;
+    height: 370px;
+    align-items: center;
+}
+
+.contacts:hover{
+    background-color: #00BFFF;
+}
+
+.contactsContainer a{
+    padding: 0px;
+    margin: 0px;
+    width: 100%;
+}
+
+/*noticias*/
+
+.noticiasFBcontainer{
+    margin-top: 20px;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.noticiasFBcontainer div{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.noticiasFBcontainer .noticiasizquierda{
+    background: radial-gradient(circle at center,#00BFFF, #0196FF);
+    width: 200px;
+    height: 640px;
+    border-radius: 40px 0 0 40px;
+    margin-right:50px;
+}
+
+.noticiasFBcontainer .noticiasderecha{
+    background: radial-gradient(circle at center,#00BFFF, #0196FF);
+    width: 200px;
+    height: 640px;
+    border-radius: 0 40px 40px 0;
+    margin-left:50px;
+}
+
+.noticiastextizquierda{
+    transform: rotate(90deg);
+    display: inline;
+    white-space: nowrap;
+    font-size: 70px;
+}
+.noticiasimagenderecha{
+    height: 120px;
+    width: 120px;
+}
+
+/*carruseles*/
+
+.carousel{
+    height: 90%;
+    display: flex;
+    align-items: center;
+  }
+  
+  .carousel-inner {
+    display: flex;
+    overflow-x: hidden;
+    overflow-y: hidden;
+    padding: 50px 0px;
+  }
+  
+  .carousel-item{
+    min-width: 300px;
+    max-width: 300px;
+    border: 5px solid;
+    color: #0196FF;
+    cursor: pointer;
+    margin: 0px 16px;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+  }
+  
+  .carousel-item:hover {
+    transform: scale(1.2);
+  }
+
+
+/*contenedor de universidades*/
+
+.universidadCarrousel{
+    margin: 2px;
+}
+.slidercss{
+    width: 100%;
+    overflow: hidden;
+    height: auto;
+    margin: auto;
+}
+.slidecss{
+    width: 350px !important;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+    margin: 10px;
+}
+.slidecss img{
+    height: 160px;
+    margin: 10px;
+}
+.slidecss div{
+    width: 200px;
+    display: flex;
+    align-items: center;
+}
+.slidecss h2{
+    text-align: center;
+    font-size: 24px;
+    color: #0196FF;
+}
+.slidecss-copy{
+    width: 100%;
+    display: flex;
+}
+.slidecss-track{
+    display: flex;
+    -webkit-animation: scroll 40s linear infinite;
+    animation: scroll 40s linear infinite;
+    
+    width: calc(370px*12);
+}
+
+@keyframes scroll {
+    0%{
+        -webkit-transform:translatex(0);
+        transform:(0);
+    }
+    100%{
+        -webkit-transform:translatex(calc(-370px*6));
+        transform:(calc(-370px*6));
+    }
+}
+
+/*sedes mapa*/
+
+.sedesHeader{
+    margin-top: 45px;
+    height: 90px;
+    display: flex;
+}
+
+.huaura{
+    width: 33.3%;
+    background-color: #00BFFF;
+}
+
+.sayan{
+    width: 33.4%;
+    background-color: #01ABFF;
+}
+
+.huacho{
+    width: 33.3%;
+    background-color: #0196FF;
+}
+
+.sedesHflex{
+    font-size: 36px;
+    color: white;
+    font-family: "alatsi";
+
+    border: none;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border-radius: 10px 10px 0 0;
+}
+
+.sedesBody{
+    height: 450px;
+    width: 100%;
+    background-color: #00BFFF;
+    display: flex;
+}
+
+.sedesBodytext{
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.sedesBodytext h1{
+    text-decoration: underline;
+    font-size: 28px;
+    margin: 0;
+}
+
+.sedesBodytext h2{
+    font-size: 28px;
+    margin: 0;
+}
+
+.sedesBodymap{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.sedesBodymap iframe{
+    border-radius: 10px;
+}
+
+.sedesBTE{
+    margin: 10px 0;
+    border-radius: 10px;
+    width: 80%;
+    height: 20%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column
+}
+
+.direccion{
+    background-color: white;
+    color: #024076;
+}
+
+.telefono{
+    background-color: white;
+    color: #024076;
+}
+.masinformacion{
+    background-color: #024076;
+    color: white;
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    justify-content: center;
+    border: none;
+    font-family: "alatsi";
+}
+
+.masinformacion:hover {
+    background-color: #002546;
+}
+
+.masinformacion img{
+    height: 36px;
+    margin: 5px;
+}
+/*chatbot*/
+
+/* Estilo para el botón flotante */
+.floating-btn {
+    position: fixed;
+    bottom: 20px;
+    right: 20px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    padding: 15px;
+    border-radius: 50%;
+    font-size: 24px;
+    cursor: pointer;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    transition: background-color 0.3s;
+  }
+
+  .floating-btn:hover {
+    background-color: #0056b3;
+  }
+
+  /* Estilo para el modal flotante */
+  .chat-modal {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    bottom: 80px; /* Justo encima del botón */
+    right: 20px;
+    background-color: #ffffff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    z-index: 1000;
+    overflow: hidden;
+  }
+
+  /* Estilo para el encabezado del modal */
+  .chat-modal-header {
+    background-color: #007bff;
+    color: white;
+    padding: 10px;
+    font-size: 18px;
+    text-align: center;
+  }
+
+  /* Contenido del chat */
+  .chat-content {
+      height: calc(100% - 50px); /* Restar el encabezado */
+      padding: 10px;
+      overflow-y: auto;
+      font-family: Arial, sans-serif;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      flex-direction: column;
+      height: 100vh;
+      background-color: #f4f4f4;
+  }
+
+  #chat-container {
+      max-width: 100%;
+      background-color: #fff;
+      border: 1px solid #ddd;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+      display: flex;
+      flex-direction: column;
+  }
+  #chatbox {
+      width: 100%;
+      max-width: 400px;
+      padding: 20px;
+      display: flex;
+      flex-direction: column;
+      gap: 20px;
+      height: 300px;
+      overflow-y: auto;
+  }
+
+  .chat-bubble {
+      position: relative;
+      max-width: 80%;
+      padding: 15px;
+      background-color: #e1f7d5; /* Color de la burbuja de chat */
+      border-radius: 15px;
+      box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+      font-size: 16px;
+      color: #333;
+      display: flex;
+      align-items: center;
+  }
+
+  .mensaje {
+      margin: 8px 10px;
+  }
+
+  .avatar {
+      position: absolute;
+      bottom: -15px; /* Mueve el avatar hacia el borde inferior */
+      width: 40px; /* Ajusta el tamaño del avatar */
+      height: 40px; /* Asegura que la imagen sea cuadrada */
+      border-radius: 50%; /* Hace la imagen redonda */
+      border: 2px solid #fff; /* Borde blanco alrededor del avatar */
+      overflow: hidden;
+      }
+
+      .bot .avatar {
+          left: 10px; /* Avatar a la izquierda */
+      }
+
+      .user .avatar {
+        top: 45px;
+        right: 10px; /* Avatar a la derecha */
+      }
+
+      .avatar img {
+          width: 100%;
+          height: 100%;
+          object-fit: cover; /* Hace que la imagen se ajuste sin distorsionarse */
+      }
+
+      .bot {
+          align-self: flex-start; /* Alinea la burbuja hacia la izquierda */
+          background-color: #d1e7fd;
+      }
+
+      .user {
+          align-self: flex-end; /* Alinea la burbuja hacia la derecha */
+          background-color: #e1f7d5; /* Color diferente para la burbuja derecha */
+      }
+
+      .chat-bubble {
+          margin-bottom: 15px;
+      }
+
+      #buttons-container {
+          padding: 10px;
+          display: flex;
+          flex-direction: column;
+  }
+  .button {
+      background-color: #007bff;
+      color: #fff;
+      border: none;
+      padding: 10px;
+      margin-bottom: 5px;
+      border-radius: 5px;
+      cursor: pointer;
+      font-size: 14px;
+      text-align: center;
+  }
+  .button:hover {
+      background-color: #0056b3;
+  }
+
+  /* Botón para cerrar el modal */
+  .close-chat-btn {
+      text-align: center;
+      height: 25px;
+      width: 25px;
+      position: absolute;
+      right: 10px;
+      top: 8px;
+      background-color: red;
+      color: white;
+      border: none;
+      border-radius: 50%;
+      font-weight: bold;
+      padding: 0;
+      cursor: pointer;
+  }
+
+  .close-chat-btn:hover {
+    background-color: darkred;
+  }
+
+/*contenedor footer*/
+
+.footerbody{
+    display: flex;
+    height: 100%;/*180*/
+    justify-content: space-around;
+    background-color: black;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footerbody img{
+    height: 100px;
+}
+
+.footercenter img{
+    margin: 10px;
+}
+
+.footerright a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerright p{
+    font-size: 24px;
+    margin: 2.5px;
+}
+
+.footerright img{
+    height: 24px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
+
+/*para celulares*/
+@media only screen and (max-width: 600px){
+
+.navImage img {
+    height: 65px;
+}
+
+.navUtilities {
+    display: none; /* Ocultamos los enlaces en móviles */
+    flex-direction: column;
+    text-align: left;
+    width: 100%;
+    background-color: #0196FF;
+    margin-top: 40%;
+    margin-right: 0;
+}
+
+.navUtilities a {
+    display: flex;
+    padding: 5px 7.5px;
+}
+
+.menu-icon {
+    display: block; /* Mostramos el ícono del menú en pantallas pequeñas */
+}
+
+/* Mostrar enlaces cuando se hace clic en el menú */
+.navUtilities.show-links {
+    display: flex;
+}
+
+.bannerContainer{
+    height: 500px;
+}
+.bannerContainer p {
+    font-size: 20px;
+}
+
+.redesContainer p{
+    font-size: 0.1px;
+    color: #0196FF;
+}
+
+.videoBody{
+    position: relative;
+    flex-direction: column;
+    height: auto;
+}
+.videoBodyright{
+    width: auto;
+    margin: 10px;
+}
+
+.videoBody img{
+    display: none;
+}
+
+.videoText{
+    position: relative;
+    width: 91%;
+    margin: 0px 5px;
+    height: auto;
+    border: 6px solid transparent;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #0196FF;
+}
+
+.videoText p{
+    margin: 10px 0;
+    font-size: 15px;
+    padding: 0;
+    width: 90%;
+}
+
+.videoContainer{
+    position: relative;
+    margin: 0%;
+    width: 93.4%;
+}
+
+.videoContainer video{
+    width: 100%;
+}
+.containerCentrado{
+    height: 340px;
+    margin: 2px;
+}
+
+.header{
+    height: auto;
+    width: 80%;
+    font-size: 18px;
+}
+.header img{
+    height: 20px;
+}
+.bodytext{
+    width: 90%;
+    border: 6px solid transparent;
+    border-radius: 20px;
+    border-style: solid;
+    border-color: #0196FF;
+}
+.bodytext p{
+    font-size: 15px;
+}
+.contacts{
+    height: auto;
+}
+.contactsContainer{
+    height: auto;
+    flex-direction: column;
+}
+.contactsContainer img{
+    height: auto;
+    width: 80%;
+    padding: 10%;
+}
+.contactsContainer img:hover{
+    padding: 5%;
+}
+
+.alone{
+    padding: 18px 0;
+}
+
+.carousel-inner{
+    padding: 40px;/*33px*/
+}
+.carousel-item{
+    min-width: 200px;
+    max-width: 200px;
+
+}
+
+.sedesContainer{
+    width: 100%;
+    margin: 0;
+}
+.sedesBody{
+    flex-direction: column;
+}
+.sedesHflex{
+    font-size: 20px;
+}
+.sedesBTE  h1,.sedesBTE  h2,.sedesBTE  h3{
+    font-size: 16px;
+}
+.sedesHeader{
+    height: 50px;
+}
+.sedesBody{
+    height: 100%;
+    padding-bottom: 10px;
+}
+.sedesBodytext{
+    padding-top: 10px;
+}
+
+.servicesElementContainer{
+    display: none;
+}
+.noticiasFBcontainer{
+    display: none;
+}
+#particles-js{
+    width: 100% !important;
+}
+
+.footerbody{
+    width: 100%;
+    height: 50%;
+    margin-bottom: 5px;
+}
+.footercenter a{
+    width: auto;
+    height: 2%;
+}
+.footercenter a img{
+    height: 45px;
+    margin: 4px;
+}
+
+.footerright{
+    display: none;
+}
+.footercenter{
+    display: flex;
+}
+.footerleft{
+    display: none;
+}
+footer{
+    font-size: 12px;
+}
+}
