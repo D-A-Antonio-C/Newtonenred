@@ -1,0 +1,68 @@
+body{
+    font-family: "alatsi";
+    background-color: black;
+}
+
+.carreraheader{
+    margin-bottom: 7px;
+    display: flex;
+    background-color: black;
+    color: white;
+    justify-content: space-between;
+}
+
+.carreraheader img{
+    height: 90px;
+}
+
+.buttoncontainer{
+    display: flex;
+    justify-content: center;
+}
+
+.buttoncontainer button{
+    background-color: #0196FF;
+    color: white;
+    font-family: "alatsi";
+    border: none;
+    border-radius: 10px;
+    font-size: 24px;
+    padding: 10px 6.5%;
+    margin: 0 0.3%;
+}
+
+.carreracontainer{
+    display: flex;
+    background-color: #0196FF;
+    color: white;
+    padding: 20px;
+    border-radius: 20px;
+    margin: 10px 0;
+}
+
+.carreracontainer h1,h2,p{
+    margin: 0;
+}
+
+.carreraimagen img{
+    width: 450px;
+    height: 370px;
+    border-radius: 20px;
+}
+.carreratext{
+    margin-right: 30px;
+}
+.carreratext h1{
+    text-decoration: underline;
+    font-size: 34px;
+    margin-bottom: 3px;
+}
+.carreratext h2{
+    margin-top: 10px;
+    text-decoration: underline;
+    font-size: 32px;
+    margin-bottom: 3px;
+}
+.carreratext p{
+    font-size: 22px;
+}

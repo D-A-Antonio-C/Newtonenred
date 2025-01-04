@@ -1,0 +1,310 @@
+/*test vocacional*/
+
+body{
+    font-style: normal;
+    font-family: "Alatsi" !important;
+    margin: 0;
+}
+
+/*barra de navegacion*/
+
+.navContainer{
+    height: 100px;
+    width: 100%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: space-between;
+    background-color: rgba(0, 0, 0, 0.60);
+}
+
+.navImage img{
+    height: 80px;
+}
+
+.navUtilities{
+    display: flex;
+    margin-right: 20px;
+}
+
+.navUtilities a {
+    display: flex;
+    flex-wrap: wrap;
+    align-content: center;
+    align-items: center;
+    margin: 5px;
+}
+
+.navUtilities a img{
+    height: 30px;
+    width: auto;
+    margin: 5px;
+}
+
+.navContainer a{
+    color: white;
+    text-decoration: none;
+    font-size: 20px;;
+}
+
+/*banner*/
+
+.bannerContainer{
+    height: 650px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background-color: rgba(0, 0, 0, 0.40);
+}
+.bannerContainer p{
+    font-size: 36px;
+    text-align: center;
+    margin: 0 !important;
+    padding: 0;
+    color: white;
+}
+.indeximage{
+    background-image: url("banner.jpg");
+    width: 100%;
+    height: auto;
+    background-size: cover;   /* Ajusta la imagen para cubrir el contenedor */
+    background-position: center; /* Centra la imagen dentro del contenedor */
+    background-repeat: no-repeat; /* Evita que la imagen se repita */
+}
+/*test slider*/
+
+.adviseContainer{
+    height: 25%;
+    margin: 1px;
+}
+
+.adviseContainer p{
+    text-align: center;
+    font-size: 24px;
+}
+
+
+#ultimo + div{
+    visibility:hidden;
+}
+.mini{
+	text-align: center;
+}
+
+
+.bannerTestT{
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+    flex-wrap: wrap;
+    align-content: stretch;
+    justify-content: center;
+    align-items: center;
+}
+#testVocacional {margin: 30px auto; }
+    #testVocacional p { font-size: 18px; margin-top: 10px; }
+
+    .tvTit { 
+        font-weight: 700; 
+        border-bottom: 2px dashed white; 
+        padding-bottom: 10px; }
+
+    .fs22 { font-size: 22px; color: white; }
+    .btn-testV { background: transparent; border:none; color: #5d6872; }
+    .btn-testV:hover, .btn-testV:focus { background: #00BFFF; cursor: pointer; border:none}
+    
+   
+    #testVocacional .btn-testV { 
+        text-align: left; 
+        font-size: 20px;
+        color: white;
+        font-family: alatsi !important;
+        border-radius: 5px;
+    }
+
+    /* Hide all steps by default: */
+    .lc_tab { display: none; }
+    .lc_tab_show{ 
+        animation-duration: 1s; 
+        animation: slidein 1s ease-out forwards;
+        width: 95%;
+        overflow: hidden; 
+    }
+    
+    @keyframes slidein {
+        from {
+          transform: translateX(100%);
+          width: 100%;  /* Mantener el tamaño inicial */
+        }
+        to {
+          transform: translateX(0);
+        }
+    }
+    .minoria{ display: none; }
+    .mayoria{ display: block; }
+    .SlideBox { z-index: 999; overflow: hidden; background: #0196FF; }
+    .SlideBoxIn, .lc_tab_show { z-index: 3; width: 95%; margin: 20px auto;}
+    
+    #overlay {
+        visibility: hidden;
+        position: absolute;
+        left: 0px;
+        top: 0px;
+        width: 100%;
+        height: 100%;
+        min-height: 100vh;
+        z-index: 1000;
+        position: fixed;
+        top: 0;
+        left: 0;
+        z-index: 1140;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgb(0, 0, 0, 0.5);
+    }
+    .modal {
+        width: 90%;
+        margin: 30px auto;
+        overflow: scroll;
+        height: 80vh;
+            background-color: #fff;
+        border-radius: 0.3rem;
+    }
+    @media (min-width: 768px) {
+        .modal {
+            width: 450px;
+            margin: 60px auto;
+        }
+    }
+    .modal-content {
+      position: relative;
+      display: -ms-flexbox;
+      display: flex;
+      -ms-flex-direction: column;
+      flex-direction: column;
+      width: 90%; margin: 0 auto;
+      pointer-events: auto;
+      background-clip: padding-box;
+    }
+    .modal-title {
+        color: #1d93f4;
+        margin-top: 20px;
+    }
+    .modal-content h4 {
+        font-size: 22px;
+        color: #feca01;
+    }
+
+    .btn-close, .btn-close:visited {
+    background: transparent;
+    color: #ed6a4b;
+    font-weight: bold;
+    line-height: normal;
+    border: none;
+    font-size: 1.6em;
+    cursor: pointer;
+    position: absolute;
+    right: 0;
+    top: 10px;
+    padding: 0;
+    margin: 0;
+     }
+    .btn-close:hover, .btn-close:focus { color: #dd5a3b; }
+
+    .terminos {
+        font-size: 16px;
+    }
+    .btn-enviar, .btn-enviar:visited {
+        background: #8aaa33;
+        border: none;
+        font-size: 18px;
+        text-transform: uppercase;
+        font-weight: bold;
+        letter-spacing: 1px;
+        padding: 8px 15px;
+        color: #fff;
+    }
+    .btn-enviar:hover, .btn-enviar:focus {
+        background: #1289f8;
+        color: #fff;
+        }
+    .modal-content label {
+        font-size: 16px;
+    }
+    .mtit { color: #0065c3; font-size: 22px; }
+    #overlay .form-check-inline { margin: 5px .75rem 5px 0; }
+
+.butonresult{
+    font-family: "alatsi"!important;
+    margin: auto;
+    font-weight: bold;
+    color: #FFF5F5 !important;
+    background: #00BFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+}
+
+.butonresult:hover {
+    color: #00BFFF !important;
+    background: #ffffff;
+  }
+  
+.testbutton1{
+    font-family: "alatsi" !important;
+    margin: auto;
+    font-weight: bold;
+    color: #FFF5F5 !important;
+    background: #00BFFF;
+    border: none;
+    border-radius: 10px;
+    padding: 10px;
+    font-size: 18px;
+  }
+
+  .testbutton1:hover {
+    color: #00BFFF !important;
+    background: #ffffff;
+  }
+
+  /*contenedor footer*/
+
+.footerbody{
+    display: flex;
+    height: 180px;
+    justify-content: space-around;
+    background-color: black;
+    align-items: center;
+    margin-bottom: 10px;
+}
+
+.footerbody img{
+    height: 100px;
+}
+
+.footercenter img{
+    margin: 10px;
+}
+
+.footerright a{
+    text-decoration: none;
+    color: white;
+    display: flex;
+    justify-content: flex-start;
+    align-items: center;
+}
+
+.footerright p{
+    font-size: 24px;
+    margin: 2.5px;
+}
+
+.footerright img{
+    height: 24px;
+}
+
+footer{
+    background-color: black;
+    color: white;
+    text-align: center;
+}
