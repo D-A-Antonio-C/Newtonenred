@@ -1,0 +1,401 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Modal Flotante</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      margin: 0;
+      height: 100vh;
+      background-color: #f4f4f4;
+    }
+
+    /* Estilo para el botón flotante */
+    .floating-btn {
+      position: fixed;
+      bottom: 20px;
+      right: 20px;
+      background-color: #007bff;
+      color: white;
+      border: none;
+      padding: 15px;
+      border-radius: 50%;
+      font-size: 24px;
+      cursor: pointer;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+      transition: background-color 0.3s;
+    }
+
+    .floating-btn:hover {
+      background-color: #0056b3;
+    }
+
+    /* Estilo para el modal flotante */
+    .chat-modal {
+      display: none; /* Inicialmente oculto */
+      position: fixed;
+      bottom: 80px; /* Justo encima del botón */
+      right: 20px;
+      background-color: #ffffff;
+      border-radius: 8px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      z-index: 1000;
+      overflow: hidden;
+    }
+
+    /* Estilo para el encabezado del modal */
+    .chat-modal-header {
+      background-color: #007bff;
+      color: white;
+      padding: 10px;
+      font-size: 18px;
+      text-align: center;
+    }
+
+    /* Contenido del chat */
+    .chat-content {
+        height: calc(100% - 50px); /* Restar el encabezado */
+        padding: 10px;
+        overflow-y: auto;
+        font-family: Arial, sans-serif;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        flex-direction: column;
+        height: 100vh;
+        background-color: #f4f4f4;
+    }
+
+    #chat-container {
+        max-width: 100%;
+        background-color: #fff;
+        border: 1px solid #ddd;
+        border-radius: 10px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        display: flex;
+        flex-direction: column;
+    }
+    #chatbox {
+        width: 100%;
+        max-width: 400px;
+        padding: 20px;
+        display: flex;
+        flex-direction: column;
+        gap: 20px;
+        height: 300px;
+        overflow-y: auto;
+    }
+
+    .chat-bubble {
+        position: relative;
+        max-width: 80%;
+        padding: 15px;
+        background-color: #e1f7d5; /* Color de la burbuja de chat */
+        border-radius: 15px;
+        box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+        font-size: 16px;
+        color: #333;
+        display: flex;
+        align-items: center;
+    }
+
+    .mensaje {
+        margin-bottom: 30px; /* Espacio entre el mensaje y la imagen */
+        margin-right: 45px; /* Evita que el mensaje se superponga con la imagen */
+    }
+
+    .avatar {
+        position: absolute;
+        bottom: -15px; /* Mueve el avatar hacia el borde inferior */
+        width: 40px; /* Ajusta el tamaño del avatar */
+        height: 40px; /* Asegura que la imagen sea cuadrada */
+        border-radius: 50%; /* Hace la imagen redonda */
+        border: 2px solid #fff; /* Borde blanco alrededor del avatar */
+        overflow: hidden;
+        }
+
+        .bot .avatar {
+            left: 10px; /* Avatar a la izquierda */
+        }
+
+        .user .avatar {
+            right: 10px; /* Avatar a la derecha */
+        }
+
+        .avatar img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover; /* Hace que la imagen se ajuste sin distorsionarse */
+        }
+
+        .bot {
+            align-self: flex-start; /* Alinea la burbuja hacia la izquierda */
+            background-color: #d1e7fd;
+        }
+
+        .user {
+            align-self: flex-end; /* Alinea la burbuja hacia la derecha */
+            background-color: #e1f7d5; /* Color diferente para la burbuja derecha */
+        }
+
+        .chat-bubble {
+            margin-bottom: 15px;
+        }
+
+        #buttons-container {
+            padding: 10px;
+            display: flex;
+            flex-direction: column;
+    }
+    .button {
+        background-color: #007bff;
+        color: #fff;
+        border: none;
+        padding: 10px;
+        margin-bottom: 5px;
+        border-radius: 5px;
+        cursor: pointer;
+        font-size: 14px;
+        text-align: center;
+    }
+    .button:hover {
+        background-color: #0056b3;
+    }
+
+    /* Botón para cerrar el modal */
+    .close-chat-btn {
+        text-align: center;
+        height: 25px;
+        width: 25px;
+        position: absolute;
+        right: 10px;
+        top: 8px;
+        background-color: red;
+        color: white;
+        border: none;
+        border-radius: 50%;
+        font-weight: bold;
+        padding: 0;
+        cursor: pointer;
+    }
+
+    .close-chat-btn:hover {
+      background-color: darkred;
+    }
+  </style>
+</head>
+
+
+
+<body>
+  <!-- Botón flotante -->
+  <button class="floating-btn" id="openChatBtn">💬</button>
+
+  <!-- Modal flotante -->
+  <div class="chat-modal" id="chatModal">
+    <div class="chat-modal-header">
+      Chat Newton
+      <button class="close-chat-btn" id="closeChatBtn">X</button>
+    </div>
+    <div id="chat-container">
+        <div id="chatbox">
+            <!-- Aquí se mostrarán los mensajes -->
+        </div>
+        <div id="buttons-container">
+            <!-- Aquí se mostrarán los botones -->
+            <button class="button" onclick="userReply('formacion academica')">Formacion academica</button>
+            <button class="button" onclick="userReply('costos y horarios')">Costos y horarios</button>
+            <button class="button" onclick="userReply('seguimiento educativo')">Seguimiento educativo</button>
+            <button class="button" onclick="userReply('contacto')">Contacto</button>
+        </div>
+    </div>
+  </div>
+
+  <script>
+    //chatbot
+
+    //redirigir
+    function redirigir(url){
+        window.location.href = url;
+    }
+
+    // Obtener los elementos
+    const openChatBtn = document.getElementById('openChatBtn');
+    const closeChatBtn = document.getElementById('closeChatBtn');
+    const chatModal = document.getElementById('chatModal');
+
+    // Mostrar el modal al hacer clic en el botón flotante
+    openChatBtn.addEventListener('click', function() {
+      chatModal.style.display = 'block';
+    });
+
+    // Cerrar el modal al hacer clic en el botón de cierre
+    closeChatBtn.addEventListener('click', function() {
+      chatModal.style.display = 'none';
+    });
+
+    // Cerrar el modal si el fondo es clickeado
+    window.addEventListener('click', function(event) {
+      if (event.target === chatModal) {
+        chatModal.style.display = 'none';
+      }
+    });
+
+    //chat
+
+     // Función para agregar mensajes al chat
+     function addMessage(text, sender) {
+            const chatbox = document.getElementById('chatbox');
+
+            const message = document.createElement('div');
+            message.classList.add('chat-bubble', sender);
+
+            const messagetxt = document.createElement('p');
+            messagetxt.classList.add('mensaje');
+            messagetxt.innerText = text;
+
+            const messageimgdiv = document.createElement('div');
+            messageimgdiv.classList.add('avatar');
+            messageimgdiv.setAttribute('id','imgdiv')
+
+            const messageimg = document.createElement('img');
+            if(sender=="bot"){
+                messageimg.setAttribute('src','recursosvisuales/imagenes/newton-escudo.png')
+            }else{
+                messageimg.setAttribute('src','recursosvisuales/imagenes/avatar.png')
+            }
+
+            messageimgdiv.appendChild(messageimg);
+            message.appendChild(messagetxt);
+            message.appendChild(messageimgdiv);
+
+            chatbox.appendChild(message);
+            chatbox.scrollTop = chatbox.scrollHeight; // Hacer scroll hacia abajo
+        }
+
+        // Función para manejar la respuesta del usuario
+        function userReply(choice) {
+            // Limpiar los botones
+            const buttonsContainer = document.getElementById('buttons-container');
+            buttonsContainer.innerHTML = '';
+
+            // Agregar mensaje de usuario
+            addMessage('Yo: ' + choice, 'user');
+
+            // Responder dependiendo de la elección del usuario
+            setTimeout(() => {
+
+                //Formacion academica
+
+                if (choice === 'formacion academica') {
+                    addMessage('Newtonbot: ¿Qué tipo de productos te interesan?', 'bot');
+                    addButtons(['Servicios y programas', 'Estructura de clases', 'Formacion profesores','Programas especiales']);
+                }
+                else if((choice === 'servicios y programas')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'estructura de clases')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'formacion profesores')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'programas especiales')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+
+                //Costos y horarios
+
+                else if (choice === 'costos y horarios') {
+                    addMessage('Newtonbot: ¿En qué te puedo ayudar con soporte técnico?', 'bot');
+                    addButtons(['Horarios y actividades', 'Flexibilidad en horarios', 'Costo de matricula', 'Formas de pago']);
+                }
+
+                else if((choice === 'horarios y actividades')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'flexibilidad en horarios')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'costo de matricula')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'formas de pago')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+
+                //Costos y horarios
+
+                else if (choice === 'seguimiento educativo') {
+                    addMessage('Newtonbot: ¿En qué te puedo ayudar con soporte técnico?', 'bot');
+                    addButtons(['Comunicacion con padres', 'Informes periodicos', 'Observacion del proceso', 'Justificacion de inasistencias']);
+                }
+
+                else if((choice === 'comunicacion con padres')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'informes periodicos')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'observacion del proceso')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+                else if((choice === 'justificacion de inasistencias')){
+                    addMessage('Newtonbot: msg', 'bot');
+                    addButtons(['Volvamos al inicio'])
+                }
+
+                //contacto
+                else if (choice === 'contacto') {
+                    addMessage('Newtonbot: ¿Cómo prefieres contactarnos?', 'bot');
+                    addButtons(['Facebook', 'Whatsapp', 'Instagram']);
+                }
+                //regresar al inicio
+                else if (choice === 'volvamos al inicio'){
+                    addMessage('Newtonbot: ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?', 'bot')
+                    addButtons(['Formacion academica','Costos y horarios','Seguimiento educativo','Contacto'])
+                }
+            }, 1000); // Responder después de 1 segundo
+        }
+
+        // Función para agregar botones de opciones
+        function addButtons(options) {
+            const buttonsContainer = document.getElementById('buttons-container');
+            options.forEach(option => {
+                const button = document.createElement('button');
+                button.classList.add('button');
+                button.innerText = option;
+
+                if(option==='Facebook'){
+                    button.onclick = () => redirigir('https://www.facebook.com/Newtonenred');
+                }else if(option==='Whatsapp'){
+                    button.onclick = () => redirigir('https://api.whatsapp.com/send?phone=51930848507&text=Hola%2C%20quisiera%20información%20sobre%20la%20preparación%20preuniversitaria');
+                }else if(option==='Instagram'){
+                    button.onclick = () => redirigir('https://www.instagram.com/newtonenred');
+                }else{
+                    button.onclick = () => userReply(option.toLowerCase());
+                }
+
+                buttonsContainer.appendChild(button);
+            });
+        }
+
+        // Iniciar el chatbot con el mensaje inicial
+        addMessage('Chatbot: ¡Hola! Soy tu asistente virtual. ¿En qué puedo ayudarte hoy?', 'bot');
+  </script>
+
+</body>
+</html>
