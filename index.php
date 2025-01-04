@@ -60,7 +60,7 @@ $imagenes2 = glob($directorio2 . '*.{jpg,jpeg,png,gif}', GLOB_BRACE);
 
             </nav>
 
-            <!--banner-->
+            <!--banners-->
 
             <div class="bannerContainer">
                 <div class="bannerTextContainer">
